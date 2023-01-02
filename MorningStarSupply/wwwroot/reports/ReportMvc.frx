@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/31/2022 18:20:30" ReportInfo.Modified="12/31/2022 20:25:04" ReportInfo.CreatorVersion="2023.1.0.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ListaEntradas" ReferenceName="ListaEntradas" DataType="null" Enabled="true">
+      <Column Name="Id" DataType="System.Int32"/>
+      <Column Name="MercadoriaRegistro" DataType="System.DateTime"/>
+      <Column Name="DataHora" DataType="System.DateTime"/>
+      <Column Name="Quantidade" DataType="System.Int32"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="103.95" Fill.Color="Black">
+      <TextObject Name="Text10" Left="170.1" Top="37.8" Width="378" Height="18.9" Text="Relatório Periódico" HorzAlign="Center" Font="Bahnschrift, 16pt, style=Bold" TextFill.Color="White"/>
+      <PictureObject Name="Picture1" Left="75.6" Top="9.45" Width="75.6" Height="75.6" Fill.Color="Black" ImageFormat="Png" Image="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"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="107.95" Width="718.2" Height="66.15" Fill.Color="Black">
+      <TextObject Name="Text2" Left="18.9" Top="28.35" Width="94.5" Height="18.9" Text="Id" Font="Segoe UI Black, 10pt" TextFill.Color="WhiteSmoke"/>
+      <TextObject Name="Text4" Left="189" Top="28.35" Width="94.5" Height="18.9" Text="Registro" Font="Segoe UI Black, 10pt, style=Bold" TextFill.Color="White"/>
+      <TextObject Name="Text6" Left="368.55" Top="28.35" Width="122.85" Height="18.9" Text="Data de Entrada" Font="Segoe UI Black, 10pt" TextFill.Color="White"/>
+      <TextObject Name="Text8" Left="567" Top="28.35" Width="94.5" Height="18.9" Text="Quantidade" Font="Segoe UI Black, 10pt" TextFill.Color="White"/>
+      <LineObject Name="Line1" Top="66.15" Width="718.2"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="178.1" Width="718.2" Height="75.6" Border.Lines="Bottom" DataSource="ListaEntradas">
+      <TextObject Name="Text1" Left="18.9" Width="94.5" Height="18.9" Text="[ListaEntradas.Id]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="189" Width="94.5" Height="18.9" Text="[ListaEntradas.MercadoriaRegistro]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="378" Width="94.5" Height="18.9" Text="[ListaEntradas.DataHora]" Format="Date" Format.Format="d" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="567" Width="94.5" Height="18.9" Text="[ListaEntradas.Quantidade]" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="257.7" Width="718.2" Height="18.9">
+      <TextObject Name="Text9" Left="670.95" Width="94.5" Height="18.9" Text="[Page]" Font="Arial, 10pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

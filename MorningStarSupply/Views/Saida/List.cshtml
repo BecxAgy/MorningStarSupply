@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MorningStarSupply.Models.Saida>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+ <div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+           Tabela de Saídas
+    </div>
+     <div class="card-body">
+       <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                  @Html.DisplayNameFor(model => model.MercadoriaRegistro)
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataHora)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantidade)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.MercadoriaRegistro)
+                    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataHora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
+                <td>
+                            <a asp-action="Edit" asp-route-id="@item.MercadoriaRegistro">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.MercadoriaRegistro">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.MercadoriaRegistro">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+    </div>
+</div>

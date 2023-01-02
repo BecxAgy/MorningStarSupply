@@ -1,0 +1,73 @@
+﻿@{
+   
+    var quant = ViewBag.QuantidadeEnt;
+    var mesEnt = ViewBag.MesEnt;
+
+    var mesSai = ViewBag.MesSai;
+    var quantSai = ViewBag.QuantidadeSai;
+
+    var mesEntSerializado = Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(mesEnt));
+    var quantEntSerializado = Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(quant));
+
+    var mesSaiSerializado = Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(mesSai));
+    var quantSaiSerializado = Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(quantSai));
+}
+
+<div>
+    <canvas id="GraficoEntrada"></canvas>
+</div>
+
+<div>
+    <canvas id="GraficoSaida"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var mesSai = @mesSaiSerializado;
+    var quantSai = @quantSaiSerializado;
+    const ctx = document.getElementById('GraficoSaida');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: mesSai,
+            datasets: [{
+                label: 'Quantidade de Mercadorias',
+                data: quantSai,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var reg = @mesEntSerializado;
+    var quant = @quantEntSerializado;
+    const ctxSai = document.getElementById('GraficoEntrada');
+
+    new Chart(ctxSai, {
+        type: 'bar',
+        data: {
+            labels: reg,
+            datasets: [{
+                label: '# of Votes',
+                data: quant,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+

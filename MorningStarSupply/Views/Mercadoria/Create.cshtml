@@ -1,0 +1,143 @@
+﻿@model MorningStarSupply.Models.Mercadoria
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<section class="background-radial-gradient overflow-hidden">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                    Cadastre suas<br />
+                    <span style="color: hsl(218, 81%, 75%)">Mercadorias</span>
+                </h1>
+                <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                    Deixe que cuidamos de suas mercadorias da forma mais organizada possível.
+                    Contamos com tabelas, gráficos e relatórios que te proporcionam maior
+                    escala de gerenciabilidade do seu estoque.
+                </p>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+                <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                <div class="card bg-glass">
+                    <div class="card-body px-4 py-5 px-md-5">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" asp-for="NumeroRegistro">N° Registro</label>
+                                <input type="number" asp-for="NumeroRegistro" class="form-control" />
+                                <span asp-validation-for="NumeroRegistro" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <label class="form-label" asp-for="Nome">Nome</label>
+                                <input type="text" asp-for="Nome" class="form-control" />
+                                <span asp-validation-for="Nome" class="text-danger"></span>
+                            </div>
+
+
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" asp-for="Fabricante">Fabricante</label>
+                                <input type="text" asp-for="Fabricante" class="form-control" />
+                                <span asp-validation-for="Fabricante" class="text-danger"></span>
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" asp-for="Descricao">Descrição</label>
+                                <input type="text" asp-for="Descricao" class="form-control" />
+                                <span asp-validation-for="Descricao" class="text-danger"></span>
+                            </div>
+
+
+                            <!-- Submit button -->
+                            <button type="submit" value="Create" class="btn btn-primary mt-4 mb-4 ">
+                                Cadastrar
+                            </button>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<!-- Section: Design Block -->
+<section class="">
+    <!-- Jumbotron -->
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+        <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="my-5 display-3 fw-bold ls-tight">
+                        Adicione ao estoque de <br />
+                        <span class="text-primary">Mercadorias</span>
+                    </h1>
+                    <p style="color: hsl(217, 10%, 50.8%)">
+                        Deixe que cuidamos de suas mercadorias da forma mais organizada possível. 
+                        Contamos com tabelas, gráficos e relatórios que te proporcionam maior 
+                        escala de gerenciabilidade do seu estoque.
+                    </p>
+                </div>
+
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card ">
+                        <div class="card-body py-5 px-md-5">
+                            <form asp-action="Create">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" asp-for="NumeroRegistro">N° Registro</label>
+                                    <input type="number" asp-for="NumeroRegistro" class="form-control" />
+                                    <span asp-validation-for="NumeroRegistro" class="text-danger"></span>
+                                 </div>
+                                
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" asp-for="Nome">Nome</label>
+                                    <input type="text" asp-for="Nome" class="form-control" />
+                                    <span asp-validation-for="Nome" class="text-danger"></span>
+                                 </div>
+                                 
+
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" asp-for="Fabricante">Fabricante</label>
+                                    <input type="text" asp-for="Fabricante" class="form-control" />
+                                    <span asp-validation-for="Fabricante" class="text-danger"></span>
+                                </div>
+
+                                <!-- Password input -->
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" asp-for="Descricao">Descrição</label>
+                                    <input type="text" asp-for="Descricao" class="form-control" />
+                                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                                </div>
+
+                                
+                                <!-- Submit button -->
+                                <button type="submit" value="Create" class="btn rounded-pill btn-primary mt-4 mb-4">
+                                    Cadastrar
+                                </button>
+
+                               
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->*@
+
+
+
