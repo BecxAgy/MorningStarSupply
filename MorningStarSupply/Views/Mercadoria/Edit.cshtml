@@ -1,0 +1,65 @@
+﻿@model MorningStarSupply.Models.Mercadoria
+
+
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <h2 class="fw-bold mb-5">Editar</h2>
+                        <form asp-action="Edit">
+                           <div asp-validation-summary="ModelOnly" class="text-danger">
+                            </div>
+                            <input type="hidden" asp-for="Id" />
+                                <div class="form-outline mb-4">
+                                    <label asp-for="NumeroRegistro" class="control-label"></label>
+                                    <input asp-for="NumeroRegistro" class="form-control" />
+                                    <span asp-validation-for="NumeroRegistro" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label asp-for="Nome" class="control-label"></label>
+                                    <input asp-for="Nome" class="form-control" />
+                                    <span asp-validation-for="Nome" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-form-outline mb-4">
+                                    <label asp-for="Fabricante" class="control-label"></label>
+                                    <input asp-for="Fabricante" class="form-control" />
+                                    <span asp-validation-for="Fabricante" class="text-danger"></span>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label asp-for="Descricao" class="control-label"></label>
+                                    <input asp-for="Descricao" class="form-control" />
+                                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-block mb-4">
+                                    Salvar
+                                </button>
+                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <div class=" p-5 bg-image" style="
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+        height: 700px;
+        border-radius:3px;
+
+        ">
+
+            </div>
+        </div>
+    </div>
+    </div>
+  <!-- Jumbotron -->
+</section>
+              

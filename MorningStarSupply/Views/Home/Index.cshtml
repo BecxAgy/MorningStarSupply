@@ -1,4 +1,18 @@
-﻿
+﻿@{
+
+    var quant = ViewBag.QuantidadeEnt;
+    var mesEnt = ViewBag.MesEnt;
+
+    var mesSai = ViewBag.MesSai;
+    var quantSai = ViewBag.QuantidadeSai;
+
+    var mesEntSerializado = Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(mesEnt));
+    var quantEntSerializado = Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(quant));
+
+    var mesSaiSerializado = Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(mesSai));
+    var quantSaiSerializado = Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(quantSai));
+}
+
   <div id="preview" class="preview">
       <div style="display: none;"></div>
           <div>
@@ -11,13 +25,15 @@
                     </div> 
                               <!-- Background image -->
                               <div class="container"> 
-                                  <div class="card mx-4 mx-md-5 text-center shadow-5-strong" style=" margin-top: -170px; background: hsla(0, 0%, 100%, 0.7); backdrop-filter: blur(30px); "> 
+                                  <div class="card mx-4 mx-md-5 text-center shadow-5-strong" style=" margin-top: -200px; background: hsla(0, 0%, 100%, 0.7); backdrop-filter: blur(30px); "> 
                                       <div class="card-body px-4 py-5 px-md-5">
                                             <h1 class="display-3 fw-bold ls-tight mb-4">  
                                                 <span>Gerencie seu estoque com a</span>
                                                 <br> <span style="color:#20235a;">Morning Star</span> 
                                             </h1>
-                                            <a class="btn btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2" role="button" style="color:white; background-color:#20235a">
+                                            <a asp-area=""  asp-action="Create" asp-controller="Mercadoria" 
+                                            class="btn btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2" role="button"
+                                            style="color:white; background-color:#20235a">
                                                 Cadastrar
                                             </a>
                                         
@@ -27,8 +43,89 @@
                       </section>
                    </section><!---->
                </div>
-          <div data-draggable="true" style="position: relative;">
-              <!----><!---->
-           </div>
+          
           </div>
+    <div class="row align-content-center m-5">
+        <div class="col-md-7">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold" style="color:#20235a;">Gráfico de Entradas</h6>
+
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="pt-4 pb-2">
+                        <canvas id="Entrada"></canvas>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold" style="color:#20235a;">Gráfico de Saídas</h6>
+
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="pt-4 pb-2">
+                        <canvas id="GraficoSaida"></canvas>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var mesSai = @mesSaiSerializado;
+    var quantSai = @quantSaiSerializado;
+    const ctx = document.getElementById('GraficoSaida');
+
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: mesSai,
+            datasets: [{
+                label: 'Quantidade de Saídas',
+                data: quantSai,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+        }
+    });
+
+    var reg = @mesEntSerializado;
+    var quant = @quantEntSerializado;
+    const ctxSai = document.getElementById('Entrada');
+
+    new Chart(ctxSai, {
+        type: 'pie',
+        data: {
+            labels: reg,
+            datasets: [{
+                label: 'Quantidade de Entradas',
+                data: quant,
+                borderWidth: 1
+                
+
+            }]
+        },
+        options: {
+            responsive: true,
+        }
+    });
+</script>

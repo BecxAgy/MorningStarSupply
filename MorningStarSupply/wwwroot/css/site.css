@@ -296,3 +296,17 @@ body {
     background-color: hsla(0, 0%, 100%, 0.9) !important;
     backdrop-filter: saturate(200%) blur(25px);
 }
+
+.cascading-right {
+    margin-right: -50px;
+}
+
+@media (max-width: 991.98px) {
+    .cascading-right {
+        margin-right: 0;
+    }
+}
+
+.border-left-success {
+    border-left: 0.25rem solid #ad1fff !important;
+}

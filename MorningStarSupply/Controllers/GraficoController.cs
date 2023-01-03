@@ -21,9 +21,11 @@ namespace MorningStarSupply.Controllers
         {
             var mes = new List<string>();
             var quantidade = new List<int>();
+            int totalEntrada = 0;
 
             var mesSaida = new List<string>();
             var quantidadeSaida = new List<int>();
+            int totalSaida = 0;
 
 
             var entradas = _grafico.GetQuantidadeMensalEntrada();
@@ -33,20 +35,23 @@ namespace MorningStarSupply.Controllers
             {
                 quantidade.Add(n.QuantidadeMercadoria);
                 mes.Add(n.Mes);
+                totalEntrada += n.QuantidadeMercadoria;
             }
 
             ViewBag.QuantidadeEnt = quantidade;
             ViewBag.MesEnt = mes;
+            ViewBag.TotalE = totalEntrada;
 
             foreach (var n in saidas)
             {
                 quantidadeSaida.Add(n.QuantidadeMercadoria);
                 mesSaida.Add(n.Mes);
-
+                totalSaida += n.QuantidadeMercadoria;
             }
 
             ViewBag.QuantidadeSai = quantidadeSaida;
             ViewBag.MesSai = mesSaida;
+            ViewBag.TotalS = totalSaida;
 
 
             return View();

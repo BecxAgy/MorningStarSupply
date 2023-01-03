@@ -13,14 +13,79 @@
     var quantSaiSerializado = Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(quantSai));
 }
 
-<div>
-    <canvas id="GraficoEntrada"></canvas>
-</div>
+<section class="background-radial-gradient overflow-hidden">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row d-flex justify-content-center">
+           @* CARD*@
+             <div class="col-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text- text-uppercase mb-1">
+                                                Quantidade de Entradas</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.TotalE</div>
+                                        </div>
+                                        <div class="col-auto">
+                                <i class="fa-solid fa-globe fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+           @* CARD*@
+            <div class="col-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+                                    Quantidade de Saídas
+                                </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.TotalS</div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fa-solid fa-globe fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: 4rem;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold" style="color:#20235a;">Gráfico de Entradas</h6>
 
-<div>
-    <canvas id="GraficoSaida"></canvas>
-</div>
+            </div>
+            <div class="card-body py-5 px-md-5">
 
+                <div class="row d-flex justify-content-center">
+                    <canvas id="GraficoEntrada"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: 2rem;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold" style="color:#20235a;">Gráfico de Saídas</h6>
+
+            </div>
+            <div class="card-body py-5 px-md-5">
+
+                <d class="row d-flex justify-content-center">
+            <canvas id="GraficoSaida"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
@@ -33,7 +98,7 @@
         data: {
             labels: mesSai,
             datasets: [{
-                label: 'Quantidade de Mercadorias',
+                label: 'Quantidade de Saídas',
                 data: quantSai,
                 borderWidth: 1
             }]
@@ -56,9 +121,11 @@
         data: {
             labels: reg,
             datasets: [{
-                label: '# of Votes',
+                label: 'Quantidade de Entradas',
                 data: quant,
-                borderWidth: 1
+                borderWidth: 1,
+                backgroundColor: '#87267F'
+
             }]
         },
         options: {

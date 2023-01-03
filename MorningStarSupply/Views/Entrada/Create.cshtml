@@ -9,14 +9,10 @@
         <div class="row gx-lg-5 align-items-center mb-5">
             <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
                 <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
-                    Cadastre suas<br />
+                    Registre a entrada de<br />
                     <span style="color: hsl(218, 81%, 75%)">Mercadorias</span>
                 </h1>
-                <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
-                    Deixe que cuidamos de suas mercadorias da forma mais organizada possível.
-                    Contamos com tabelas, gráficos e relatórios que te proporcionam maior
-                    escala de gerenciabilidade do seu estoque.
-                </p>
+               
             </div>
 
             <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
@@ -58,60 +54,3 @@
         </div>
     </div>
 </section>
-@*
-<section class="">
-    <!-- Jumbotron -->
-    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
-        <div class="container">
-            <div class="row gx-lg-5 align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h1 class="my-5 display-3 fw-bold ls-tight">
-                        Adicione ao estoque de <br />
-                        <span class="text-primary">Mercadorias</span>
-                    </h1>
-                    <p style="color: hsl(217, 10%, 50.8%)">
-                        Deixe que cuidamos de suas mercadorias da forma mais organizada possível.
-                        Contamos com tabelas, gráficos e relatórios que te proporcionam maior
-                        escala de gerenciabilidade do seu estoque.
-                    </p>
-                </div>
-
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="card ">
-                        <div class="card-body py-5 px-md-5">
-                            <form asp-action="Create">
-                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                                
-                                <select class="form-select" aria-label="Selecione a Mercadoria" asp-for="MercadoriaRegistro"  asp-items="@ViewBag.Mercadorias">
-                                       
-                                </select>
-                                    
-                                                                    
-                                <div class="form-group mt-4 mb-4">
-                                        <label asp-for="DataHora" class="control-label"></label>
-                                        <input  asp-for="DataHora" type="datetime-local" class="form-control" />
-                                        <span asp-validation-for="DataHora" class="text-danger"></span>
-                                    </div>
-                                <div class="form-group mb-4">
-                                        <label asp-for="Quantidade" class="control-label"></label>
-                                        <input asp-for="Quantidade" type="number" class="form-control"  />
-                                        <span asp-validation-for="Quantidade" class="text-danger"></span>
-                                 </div>
-                                <div class="form-group mt-4 mb-4">
-                                    <button type="submit" value="Create" class="btn rounded-pill btn-primary mt-4 mb-4">Cadastrar</button>
-                                </div>
-
-
-                               
-
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Jumbotron -->
-</section>*@

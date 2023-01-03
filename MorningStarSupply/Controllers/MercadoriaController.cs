@@ -26,6 +26,61 @@ namespace MorningStarSupply.Controllers
             return View();
         }
 
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if(id == null)
+            
+                return NotFound();
+            
+
+            var mercadoria = await _repository.FindByIdAsync(id);
+
+            if (mercadoria == null)
+                return NotFound();
+
+            return View(mercadoria);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, Mercadoria mercadoria)
+        {
+            if(id != mercadoria.Id)
+                return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                await _repository.Update(mercadoria);
+            }
+
+            return RedirectToAction("List");
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+
+                return NotFound();
+
+
+            var mercadoria = await _repository.FindByIdAsync(id);
+
+            if (mercadoria == null)
+                return NotFound();
+
+            return View(mercadoria);
+        }
+
+        [HttpPost,ActionName("Delete")] 
+        public async Task<IActionResult> Delete(int id)
+        {
+   
+            var mercadoria = await _repository.FindByIdAsync(id);
+            await _repository.Delete(mercadoria);
+
+
+            return RedirectToAction("List");
+        }
+
         [HttpPost]
         public ActionResult Create(Mercadoria novaMercadoria)
         {

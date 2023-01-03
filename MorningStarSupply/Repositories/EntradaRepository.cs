@@ -1,4 +1,5 @@
-﻿using MorningStarSupply.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using MorningStarSupply.Context;
 using MorningStarSupply.Models;
 using MorningStarSupply.Repositories.Interfaces;
 
@@ -27,15 +28,32 @@ namespace MorningStarSupply.Repositories
             _context.Entradas.Add(entrada);
             _context.SaveChanges();
         }
-        
-    
 
-        /// <summary>
-        ///Função que retorna o objeto retornado para identificar qual id da mercadoria que irá para tabela Entradas
-        /// </summary>
-        /// <param name="mercadoriaSelect"></param>
-        /// <returns></returns>
-        public Mercadoria getEntradaById(Mercadoria mercadoriaSelect) => _context.Mercadorias.FirstOrDefault(m => m.Id == mercadoriaSelect.Id);
+        public async Task Delete(Entrada entrada)
+        {
+            _context.Entradas.Remove(entrada);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<Entrada> FindByIdAsync(int? id)
+        {
+            var entrada = await _context.Entradas.FirstOrDefaultAsync(m => m.Id == id);
+
+
+            return entrada;
+        }
+
+        public async Task Update(Entrada entrada)
+        {
+
+            _context.Entradas.Update(entrada);
+            await _context.SaveChangesAsync();
+        }
+
+
+
+   
+       
 
     
 

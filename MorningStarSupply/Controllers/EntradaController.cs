@@ -55,6 +55,62 @@ namespace MorningStarSupply.Controllers
 
         }
 
-      
+        public async Task<IActionResult> Edit(int? id)
+        {
+            
+
+            if (id == null)
+
+                return NotFound();
+            var mercadoria = await repository.FindByIdAsync(id);
+
+            if (mercadoria == null)
+                return NotFound();
+
+            ViewBag.Mercadorias = repository.GetListMercadorias().Select(c => new SelectListItem()
+            { Text = c.Nome, Value = c.NumeroRegistro.ToString() }).ToList();
+
+            return View(mercadoria);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, Entrada entrada)
+        {
+            if (id != entrada.Id)
+                return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                await repository.Update(entrada);
+            }
+
+            return RedirectToAction("List");
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+
+                return NotFound();
+            var entrada = await repository.FindByIdAsync(id);
+
+            if (entrada == null)
+                return NotFound();
+
+            return View(entrada);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> Delete(int id)
+        {
+
+            var entrada = await repository.FindByIdAsync(id);
+            await repository.Delete(entrada);
+
+
+            return RedirectToAction("List");
+        }
+
+
     }
 }

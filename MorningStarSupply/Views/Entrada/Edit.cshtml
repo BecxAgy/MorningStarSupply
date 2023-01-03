@@ -1,0 +1,60 @@
+﻿@model MorningStarSupply.Models.Entrada
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <h2 class="fw-bold mb-5">Editar</h2>
+                        <form asp-action="Edit">            
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <div class="form-outline mb-4">
+                                <select class="form-select" aria-label="Selecione a Mercadoria" asp-for="MercadoriaRegistro" asp-items="@ViewBag.Mercadorias">
+                                </select>
+                                <span asp-validation-for="MercadoriaRegistro" class="text-danger"></span>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label asp-for="DataHora" class="control-label"></label>
+                                <input asp-for="DataHora" class="form-control" />
+                                <span asp-validation-for="DataHora" class="text-danger"></span>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label asp-for="Quantidade" class="control-label"></label>
+                                <input asp-for="Quantidade" class="form-control" />
+                                <span asp-validation-for="Quantidade" class="text-danger"></span>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <div class=" p-5 bg-image" style="
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+        height: 700px;
+        border-radius:3px;
+
+        ">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jumbotron -->
+</section>
+
+
+
+

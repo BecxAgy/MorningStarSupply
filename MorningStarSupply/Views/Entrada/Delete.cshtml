@@ -1,0 +1,66 @@
+﻿@model MorningStarSupply.Models.Entrada
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<section class="background-radial-gradient overflow-hidden">
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+                    <div class="card-body p-5 shadow-5 text-center">
+                        <dl class="row">
+                            <dt class="col-sm-4 mb-2">
+                                @Html.DisplayNameFor(model => model.MercadoriaRegistro)
+                            </dt>
+                            <dd class="col-sm-8 mb-2">
+                                @Html.DisplayFor(model => model.MercadoriaRegistro)
+                            </dd>
+                            <dt class="col-sm-4 mb-2">
+                                @Html.DisplayNameFor(model => model.DataHora)
+                            </dt>
+                            <dd class="col-sm-8 mb-2">
+                                @Html.DisplayFor(model => model.DataHora)
+                            </dd>
+                            <dt class="col-sm-4 mb-2">
+                                @Html.DisplayNameFor(model => model.Quantidade)
+                            </dt>
+                            <dd class="col-sm-8 mb-2">
+                                @Html.DisplayFor(model => model.Quantidade)
+                            </dd>
+                        </dl>
+
+                        <form asp-action="Delete">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="Delete" class="btn btn-danger m-2" />
+                            <a class="btn btn-primary " asp-action="List">Voltar</i></a>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class=" p-5 bg-image" style="
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+
+        height: 24rem;
+        border-radius:5px;
+
+        ">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    
+    
+  

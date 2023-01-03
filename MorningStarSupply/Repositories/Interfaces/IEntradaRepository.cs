@@ -11,7 +11,11 @@ namespace MorningStarSupply.Repositories.Interfaces
         IEnumerable<Mercadoria> GetListMercadorias();
 
         void AddToEntradas(Entrada entrada);
-        
+        Task<Entrada> FindByIdAsync(int? id);
+        Task Update(Entrada entrada);
+
+        Task Delete(Entrada entrada);
+
 
     }
 }
